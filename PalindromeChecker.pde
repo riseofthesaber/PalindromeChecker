@@ -17,13 +17,31 @@ public void setup()
 public boolean palindrome(String word)
 {
   //your code here
+  String smush = new String(reverse(word));
+  String flip = new String(reverse(smush));
+  if(flip.equals(word))
+    return true;
   return false;
 }
 public String reverse(String str)
 {
-    String sNew = new String();
-    //your code here
-    return sNew;
+  ArrayList<String> bits = new ArrayList<String>();
+  String product= new String();
+  for(int i=0; i<str.length();i++){
+    bits.add(str.substring(i,i+1));
+  }
+  for(int a=bits.size(); a>0;a--){
+    product = product+bits.get(a-1);
+  }
+    return product;
 }
-
-
+public String noSpaces(String sWord){
+    String whole= new String();
+    String piece= new String();
+  for(int i=0; i<sWord.length();i++){
+    piece = sWord.substring(i,i+1);
+    if (!piece.equals(" "))
+    whole=whole+piece;
+  }
+ return whole;
+}
