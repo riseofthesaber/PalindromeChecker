@@ -17,9 +17,9 @@ public void setup()
 public boolean palindrome(String word)
 {
   //your code here
-  String smush = new String(reverse(word));
+  String smush = new String(noSpaces(word));
   String flip = new String(reverse(smush));
-  if(flip.equals(word))
+  if(flip.equals(smush))
     return true;
   return false;
 }
@@ -44,4 +44,6 @@ public String noSpaces(String sWord){
     whole=whole+piece;
   }
  return whole;
+
+ //return sWord;
 }
