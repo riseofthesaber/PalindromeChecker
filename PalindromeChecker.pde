@@ -17,9 +17,10 @@ public void setup()
 public boolean palindrome(String word)
 {
   //your code here
-  String smush = new String(noSpaces(word));
+  String cut = new String(onlyLetters(word));
+  String smush = new String(noSpaces(cut));
   String flip = new String(reverse(smush));
-  if(flip.equals(smush))
+  if(flip.equalsIgnoreCase(smush))
     return true;
   return false;
 }
@@ -44,6 +45,12 @@ public String noSpaces(String sWord){
     whole=whole+piece;
   }
  return whole;
-
- //return sWord;
+}
+public String onlyLetters(String sString){
+  String dashie=new String();
+  for(int i=0; i<sString.length(); i++){
+    if(Character.isLetter(sString.charAt(i)))
+      dashie= dashie + sString.substring(i,i+1);
+  }
+  return dashie;
 }
